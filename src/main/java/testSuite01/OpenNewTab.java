@@ -1,0 +1,24 @@
+package testSuite01;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class OpenNewTab {
+	WebDriver driver;
+	public  OpenNewTab(WebDriver driver)
+	{
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+	}
+	@FindBy(id = "opentab")
+	WebElement OpenTabElement;
+	public GoBackToParentTab clickToOpenNewTab()
+	{
+		OpenTabElement.click();
+		GoBackToParentTab window=new GoBackToParentTab(driver);
+		return window;
+	}
+
+}
